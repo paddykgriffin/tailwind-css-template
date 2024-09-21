@@ -1,3 +1,4 @@
+import Hero from "../../components/Hero";
 
 interface Props {
     children: React.ReactNode;
@@ -6,12 +7,10 @@ interface Props {
 export default function ContactLayout({children}: Props) {
     return (
         <>
-        <div className="hero h-screen">
-         Hero for contact page
-        </div>
-        <div className="container mx-auto">
-            {children}
-        </div>
+            <Hero />
+            <div className="container mx-auto">
+                {children}
+            </div>
         </>
     )
 }
