@@ -1,6 +1,6 @@
-import * as React from "react"
+import React,{FC, HTMLAttributes} from "react";
 import { Button } from "./ui/button";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/app/lib/utils"
 import { Slot } from "@radix-ui/react-slot";
 
@@ -9,7 +9,7 @@ const heroVariants = cva(
     {
         variants: {
             variant: {
-                default: "text-white bg-violet-900 dark:bg-violet-400 ",
+                default: "text-red-400 bg-violet-900",
                 secondary: "text-purple-900"
             },
             size: {
@@ -25,31 +25,30 @@ const heroVariants = cva(
 )
 
 interface HeroProps 
-    extends React.HTMLAttributes<HTMLElement>,
+    extends HTMLAttributes<HTMLElement>,
         VariantProps<typeof heroVariants> {
             title: string;
             subTitle: string;
             btnLabel: string;
-            asChild?: boolean;
             backgroundImage: string;
         }
 
-const Hero = React.forwardRef<HTMLElement, HeroProps>(
-    ({className, size, variant, asChild = false, title, subTitle, btnLabel, backgroundImage, ...props}, ref) => {
-    const Comp = asChild ? Slot: "div"
+
+const Hero: FC<HeroProps> = (
+    {className, size, variant, backgroundImage, title, subTitle, btnLabel, ...props}) => {
     return (
-        <Comp 
+        <div 
         style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-        className={cn(heroVariants({ className, variant, size }))}
+                
+        className={cn(heroVariants({ variant, size, className,  }))}
         {...props}  >
             <div className="container mx-auto text-center">
-                <h1 className="text-[92px] shadow-md">{title}</h1>
-                <p className="text-2xl py-2 mb-10">{subTitle}</p>
+                <h1 className="text-9xl">{title}</h1>
+                <p className="text-2xl">{subTitle}</p>
                 <Button variant={'default'} size={'lg'}>{btnLabel}</Button>
             </div>
-        </Comp>
-        )
-    }
-)
+        </div>
+    )
+}
 
 export {Hero, heroVariants}
