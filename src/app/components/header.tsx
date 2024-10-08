@@ -3,13 +3,9 @@ import { ModeToggle } from "./mode-toggle";
 
 import {
     NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
   } from "@/app/components/ui/navigation-menu"
 
 export default function Header() {

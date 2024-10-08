@@ -2,7 +2,7 @@ import React,{FC, HTMLAttributes} from "react";
 import { Button } from "./ui/button";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/app/lib/utils"
-import { Slot } from "@radix-ui/react-slot";
+
 
 const heroVariants = cva(
     "place-content-center w-full text-white",
