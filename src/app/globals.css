@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 @layer utilities {
   .text-balance {
@@ -16,4 +13,6 @@ body {
   :root {
     --radius: 0.5rem;
   }
+
+ 
 }

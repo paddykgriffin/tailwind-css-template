@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "./components/theme-provider";
-import Header from "./components/header";
+import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
+import { Inter } from "next/font/google";
 
+const inter = Inter({
+  display: "auto",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Tailwind CSS Example",
@@ -15,13 +21,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-background min-h-screen">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Header />
-          <main>
-          {children}
-          </main>
+    <html lang="en" suppressHydrationWarning className={inter.className}>
+      <body className="prose min-h-screen max-w-none bg-background">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex h-screen flex-col">
+            <Header />
+            <main className="h-auto w-full flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
