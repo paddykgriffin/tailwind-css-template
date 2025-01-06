@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -11,8 +10,9 @@
 
 @layer base {
   :root {
-    --radius: 0.5rem;
+  --theme-primary: 276 100% 62%;
   }
-
- 
+  .dark {
+    --theme-primary: 276 100% 62%
+  }
 }

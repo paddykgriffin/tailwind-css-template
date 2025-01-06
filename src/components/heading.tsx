@@ -5,5 +5,5 @@ interface Props {
 }
 
 export function Heading({ title }: Props) {
-  return <h2 className="dark:prose-invert m-0">{title}</h2>;
+  return <h2 className="bg-primary m-0 dark:prose-invert">{title}</h2>;
 }
