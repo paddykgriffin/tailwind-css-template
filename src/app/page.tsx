@@ -21,8 +21,13 @@ function Home() {
           we can provide the right website for you to match your needs
         </Hero.SubTitle>
         <div className="mt-6 flex justify-center gap-4">
-          <Button size={"large"} href="https://www.google.com" target="_blank" className="rounded-[6px]">
-            Learn more
+          <Button
+            size={"large"}
+            href="https://www.google.com"
+            target="_blank"
+            className="rounded-[4px]"
+          >
+            Learn More
           </Button>
 
           {/* <Button
