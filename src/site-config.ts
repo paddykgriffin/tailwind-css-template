@@ -5,10 +5,13 @@ const siteConfig: SiteConfig = {
     theme: {
         color: {
             primary: {
-                light: 'blue',
-                dark: 'orange'
-            }
+                light: '#333366',
+                dark: '#333366'
+            },
         }
+    },
+    layout: {
+        container: 'xl'
     }
 }
 

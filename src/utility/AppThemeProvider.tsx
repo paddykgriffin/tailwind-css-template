@@ -3,10 +3,11 @@
 import siteConfig from "@/site-config";
 import { colorSchemes } from "@/store/features/themeSlice";
 import { useAppSelector } from "@/store/hooks";
-import type React from "react";
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { store } from "@/store/store";
 import Color from "color";
+import type React from "react";
+import { useCallback, useEffect, useLayoutEffect, useState } from "react";
+
 
 interface Props {
   children: React.ReactNode;

@@ -1,4 +1,8 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from 'tailwindcss-animate';
+import tailwindAnimateed from 'tailwindcss-animated';
+import tailwindcssTypography from '@tailwindcss/typography'
+
 
 const config: Config = {
   darkMode: ["selector"],
@@ -10,41 +14,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: "var(--primary)"
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))"
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))"
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))"
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))"
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))"
+        },
+        border: "hsl(var(--border))"
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      typography: () => ({
-        DEFAULT: {
-          css: {
-            h1: {
-              fontWeight: 700,
-              fontSize: "96px"
-            },
-            h2: {
-              fontWeight: 600,
-              fontSize: "82px"
-            },
-            h3: {
-              fontWeight: 500,
-              fontSize: "65px"
-            },
-            p: {
-              fontSize: "20px"
-            },
-          },
-        },
-      }),
+      screens: {
+        "3xl": "1720px",
+        "4xl": "1920px",
+        "5xl": "2560px"
+      },
+
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    require('@tailwindcss/typography')
+    tailwindcssAnimate, tailwindAnimateed, tailwindcssTypography
   ],
 };
 export default config;

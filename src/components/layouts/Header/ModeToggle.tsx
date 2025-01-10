@@ -1,7 +1,7 @@
 "use client";
 
 import useCurrentTheme from "@/hooks/useCurrentTheme";
-import { Button } from "./ui/button";
+import { Button } from "@/components/common/Button/Button";
 import { Icon } from "@iconify/react";
 import siteConfig from "@/site-config";
 
@@ -13,14 +13,14 @@ export function ModeToggle() {
   }
 
   return (
-    <Button onClick={toogleTheme} variant="icon" size="icon" disableElevation>
+    <Button onClick={toogleTheme} variant="icon" size="icon" disableElevation className="text-white ml-3">
       <Icon
         icon="line-md:moon"
-        className={`size-7 transition-all ${currentTheme === "dark" ? "-rotate-90 scale-0" : "-rotate-0 scale-100"}`}
+        className={`size-6 transition-all ${currentTheme === "dark" ? "-rotate-90 scale-0 " : "-rotate-0 scale-100"}`}
       />
       <Icon
         icon="line-md:sunny-filled-loop"
-        className={`absolute size-7 transition-all ${currentTheme === "dark" ? "-rotate-90 scale-100" : "-rotate-0 scale-0"}`}
+        className={`absolute size-6 transition-all ${currentTheme === "dark" ? "-rotate-90 scale-100" : "-rotate-0 scale-0"}`}
       />
       <span className="sr-only">
         {currentTheme === "dark" ? "Turn on light" : "Turn off light"}
