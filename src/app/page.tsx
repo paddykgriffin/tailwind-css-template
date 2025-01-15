@@ -15,7 +15,7 @@ import LatestWork from "@/components/custom/LatestWork/Work";
 import What from "@/components/custom/WhatWeDo/What";
 
 // Here we define the metadata for the page
-export const metadata: Metadata = {
+export const metadata: typeof Metadata = {
   title: "Home Page",
   description: "Homepage SEO content...",
 };
