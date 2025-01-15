@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import siteConfig from "@/site-config";
 import type { HTMLProps } from "@/types/common.types";
 import type { ReactNode } from "react";
+import React from "react";
 
 export type MaxWidthOption =
   | "sm"

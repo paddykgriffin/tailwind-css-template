@@ -3,6 +3,7 @@ import { Typography } from "@/components/common/Typography/Typography";
 import MapComponent from "../Map";
 import { OfficeData, JobsData } from "./data";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 export default function Contact() {
   const titleClass = cn(

@@ -2,6 +2,7 @@ import { Typography } from "@/components/common/Typography/Typography";
 import { Section } from "@/components/layouts/Section/Section";
 import Image from "next/image";
 import { Button } from "@/components/common/Button/Button";
+import React from "react";
 
 export default function About() {
   return (

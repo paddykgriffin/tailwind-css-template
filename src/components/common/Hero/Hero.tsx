@@ -80,6 +80,7 @@ const Background = ({
       )}{" "}
       {type === "img" ? (
         <img
+          alt={imageAlt}
           src={src}
           ref={mediaRef as React.RefObject<HTMLImageElement>}
           className={mediaClass}
@@ -131,11 +132,7 @@ const SubTitle = ({ children, className, ...props }: TypographyProps) => (
   </Typography>
 );
 
-const ScrollIcon = ({
-  children,
-  className,
-  align = "right",
-}: ScrollIconProps) => {
+const ScrollIcon = ({ className, align = "right" }: ScrollIconProps) => {
   const { isLoaded, heroBannerRef } = useHeroContext();
 
   const scrollToBottom = () => {
@@ -169,7 +166,7 @@ const ScrollIcon = ({
 
   return (
     <div className="col-start-1 row-start-1 flex items-end">
-      <Container className="animate-fade-down animate-duration-1000 hidden sm:mb-0 md:mb-6 md:block lg:mb-14">
+      <Container className="hidden animate-fade-down animate-duration-1000 sm:mb-0 md:mb-6 md:block lg:mb-14">
         <div className={cn("flex", alignClass)}>
           <button
             onClick={scrollToBottom}

@@ -2,7 +2,7 @@ import useScrollTrigger from "@/hooks/useScrollTrigger";
 import React from "react";
 import { Button } from "./Button/Button";
 import { cn } from "@/lib/utils";
-import { LuArrowBigDown, LuChevronUp } from "react-icons/lu";
+import { LuChevronUp } from "react-icons/lu";
 
 const ScrollToTop = () => {
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 100 });
@@ -27,7 +27,7 @@ const ScrollToTop = () => {
       <Button
         size={"icon"}
         onClick={handleClick}
-        className="bg-primary/80 rounded-full shadow-md hover:bg-primary"
+        className="rounded-full bg-primary/80 shadow-md hover:bg-primary"
         type="button"
         onKeyUp={(event: React.KeyboardEvent<HTMLButtonElement>) => {
           if (event.key === "Enter" || event.key === " ") {

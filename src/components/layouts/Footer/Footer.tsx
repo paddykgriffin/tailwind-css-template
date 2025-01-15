@@ -5,6 +5,7 @@ import Logo from "@/components/common/Logo/Logo";
 import { FaFacebook, FaGooglePlus, FaTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { LinksOne, LinksTwo } from "./MenuLinks";
+import React from "react";
 
 export default function Footer() {
   const year = new Date().getFullYear();

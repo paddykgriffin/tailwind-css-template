@@ -1,6 +1,7 @@
 import Image from "next/image";
 import useCurrentTheme from "@/hooks/useCurrentTheme";
 import Link from "next/link";
+import React from "react";
 
 export default function Logo() {
   const { currentTheme } = useCurrentTheme();

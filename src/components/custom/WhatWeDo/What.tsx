@@ -24,11 +24,11 @@ export default function What() {
         className="pb-6 text-3xl leading-[3rem] text-gray-500 dark:text-white"
       >
         We have gained a wealth of{" "}
-        <span className="dark:text-secondary font-semibold text-primary">
+        <span className="font-semibold text-primary dark:text-secondary">
           experience
         </span>{" "}
         and reputation over the last few years from{" "}
-        <span className="dark:text-secondary font-semibold text-primary">
+        <span className="font-semibold text-primary dark:text-secondary">
           developing market leading products
         </span>
       </Typography>

@@ -4,6 +4,7 @@ import { Button } from "@/components/common/Button/Button";
 import { Container } from "@/components/layouts/Container/Container";
 import { ProjectsData } from "./data";
 import Image from "next/image";
+import React from "react";
 
 export default function LatestWork() {
   return (

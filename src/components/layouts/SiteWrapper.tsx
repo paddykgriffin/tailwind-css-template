@@ -1,7 +1,7 @@
 import Footer from "@/components/layouts/Footer/Footer";
 import Header from "@/components/layouts/Header/Header";
 import { HeaderProvider } from "./Header/HeaderContext";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import siteConfig from "@/site-config";
 import ScrollToTop from "../common/ScrollToTop";
 

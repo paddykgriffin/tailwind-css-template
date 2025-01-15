@@ -1,5 +1,3 @@
-import React from "react";
-
 type Projects = {
   title: string;
   image: string;
