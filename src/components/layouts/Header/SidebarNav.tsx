@@ -1,5 +1,5 @@
 import React from "react";
- import { Button } from "@/components/common/Button/Button";
+import { Button } from "@/components/common/Button/Button";
 import {
   Sheet,
   SheetContent,
@@ -49,7 +49,7 @@ export default function SidebarNav() {
           </div>
           <nav>
             <ul>
-              {primaryMenuLinks.map((item, i) => (
+              {primaryMenuLinks.map((item) => (
                 <li key={item.label} className={cn("border-b")}>
                   <div className="flex items-center">
                     <Link

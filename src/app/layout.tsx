@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
