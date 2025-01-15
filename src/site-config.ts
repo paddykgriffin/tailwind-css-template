@@ -11,7 +11,13 @@ const siteConfig: SiteConfig = {
         }
     },
     layout: {
-        container: 'xl'
+        container: 'xl',
+        header: {
+            transparent: true,
+            hideOnScroll: true,
+            mainNav: true,
+        },
+        backToTop: true,
     }
 }
 

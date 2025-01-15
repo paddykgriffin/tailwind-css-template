@@ -2,17 +2,40 @@ import { LinkProps } from "next/link";
 
 export type NavItem = LinkProps & {label: string};
 
-export const footerMenuLinks: Array<NavItem> = [
+export const LinksOne: Array<NavItem> = [
     {
-      label: "Company Information",
+      label: "Web Design & Development",
       href: "#",
     },
     {
-      label: "What We've Done",
+      label: "Ecommerce",
       href: "#",
     },
     {
-      label: "Vacancies",
+      label: "CMS",
+      href: "#",
+    },
+    {
+      label: "Hosting",
+      href: "#",
+    },
+    {
+      label: "SEO",
       href: "#",
     }
+];
+
+export const LinksTwo: Array<NavItem> = [
+  {
+    label: "Company Information",
+    href: "#",
+  },
+  {
+    label: "What We've Done",
+    href: "#",
+  },
+  {
+    label: "Vacancies",
+    href: "#",
+  }
 ];

@@ -13,6 +13,12 @@ export type SiteConfig = {
         }
     },
     layout: {
-        container?: MaxWidthOption
+        container?: MaxWidthOption,
+        header: {
+            transparent: boolean;
+            hideOnScroll: boolean;
+            mainNav: boolean;
+        },
+        backToTop: boolean;
     }
 }

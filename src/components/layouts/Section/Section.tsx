@@ -17,7 +17,7 @@ const Section = ({
   ...props
 }: SectionProps) => {
   return (
-    <section className={cn("m-0 py-16 md:py-24", className)} {...props}>
+    <section className={cn("md:py-18 m-0 py-20", className)} {...props}>
       {fullWidth ? (
         children
       ) : (

@@ -4,6 +4,7 @@ import { TypographyProps } from "../Typography/Typography";
 interface HeroContextType {
   isLoaded: boolean;
   setIsLoaded: React.Dispatch<React.SetStateAction<boolean>>;
+  heroBannerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 interface HeroComposition {
@@ -11,6 +12,7 @@ interface HeroComposition {
   Title: React.FC<TypographyProps>;
   SubTitle: React.FC<TypographyProps>;
   Background: React.FC<BackgroundProps>;
+  ScrollIcon: React.FC<ScrollIconProps>;
 }
 
 interface ContentProps {
@@ -26,4 +28,16 @@ interface BackgroundProps {
   hideSkeleton?: boolean;
 }
 
-export type { HeroContextType, HeroComposition, ContentProps, BackgroundProps };
+interface ScrollIconProps {
+  align?: "left" | "center" | "right";
+  children?: ReactNode;
+  className?: string;
+}
+
+export type {
+  HeroContextType,
+  ScrollIconProps,
+  HeroComposition,
+  ContentProps,
+  BackgroundProps,
+};

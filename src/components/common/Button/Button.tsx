@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         contained:
-          "bg-primary text-white hover:bg-primary/90 transition duration-500 font-semibold tracking-wide dark:bg-[#121212]",
+          "bg-primary text-white hover:bg-primary/90 transition duration-500 font-semibold tracking-wide ",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
@@ -17,13 +17,13 @@ const buttonVariants = cva(
 
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        icon: "bg-transparent hover:text-black hover:bg-accent dark:hover:text-white",
+        icon: "bg-transparent hover:text-black hover:bg-black/50 dark:hover:text-white",
       },
       size: {
         small: "h-9 px-2",
         medium: "h-8 rounded-md px-3 text-xs",
         large: "h-10 px-12 py-7",
-        icon: "h-9 w-9",
+        icon: "h-10 w-10",
       },
       fullWidth: {
         true: "w-full",

@@ -2,17 +2,21 @@
 
 import React, { type ReactNode, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Typography, TypographyProps } from "../Typography/Typography";
+import {
+  Typography,
+  TypographyProps,
+} from "@/components/common/Typography/Typography";
 import type { HTMLProps } from "@/types/common.types";
 import { Container } from "@/components/layouts/Container/Container";
 import { Skeleton } from "@/components/ui/skeleton";
-
 import {
   HeroContextType,
   ContentProps,
   BackgroundProps,
   HeroComposition,
+  ScrollIconProps,
 } from "./hero.interfaces";
+import { LuChevronDown, LuMouse } from "react-icons/lu";
 
 const HeroContext = React.createContext<HeroContextType | undefined>(undefined);
 
@@ -27,23 +31,6 @@ const useHeroContext = () => {
 export interface HeroProps extends HTMLProps<"section"> {
   children: ReactNode;
 }
-
-const Hero: React.FC<HeroProps> & HeroComposition = ({
-  children,
-  className,
-  ...props
-}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return (
-    <HeroContext.Provider value={{ isLoaded, setIsLoaded }}>
-      <section className={cn("relative grid w-full", className)} {...props}>
-        {children}
-      </section>
-    </HeroContext.Provider>
-  );
-};
-
 const Background = ({
   type,
   src,
@@ -75,7 +62,7 @@ const Background = ({
   }, [type, setIsLoaded]);
 
   const mediaClass = cn(
-    "col-start-1 row-start-1 h-auto xl:h-[70vh] w-full transition-opacity duration-500",
+    "col-start-1 row-start-1 h-auto xl:h-[90vh] w-full transition-opacity duration-500",
     {
       "opacity-0": !isLoaded,
       "opacity-100": isLoaded,
@@ -144,19 +131,93 @@ const SubTitle = ({ children, className, ...props }: TypographyProps) => (
   </Typography>
 );
 
-// Assigning Title and Content to Hero component
-Hero.Content = Content;
-Hero.Content.displayName = "Hero.Content";
+const ScrollIcon = ({
+  children,
+  className,
+  align = "right",
+}: ScrollIconProps) => {
+  const { isLoaded, heroBannerRef } = useHeroContext();
 
-Hero.Title = Title;
-Hero.Title.displayName = "Hero.Title";
+  const scrollToBottom = () => {
+    if (heroBannerRef.current) {
+      const sectionBottom =
+        heroBannerRef.current.getBoundingClientRect().bottom;
 
-Hero.SubTitle = SubTitle;
-Hero.SubTitle.displayName = "Hero.SubTitle";
+      window.scrollTo({
+        top: window.scrollY + sectionBottom,
+        behavior: "smooth",
+      });
+    }
+  };
 
-Hero.Background = Background;
-Hero.Background.displayName = "Hero.Background";
+  if (!isLoaded) return null;
 
-Hero.displayName = "Hero";
+  let alignClass = "";
+  switch (align) {
+    case "left":
+      alignClass = "justify-start";
+      break;
+    case "center":
+      alignClass = "justify-center";
+      break;
+    case "right":
+      alignClass = "justify-end";
+      break;
+    default:
+      alignClass: "justify-end";
+  }
 
-export { Hero };
+  return (
+    <div className="col-start-1 row-start-1 flex items-end">
+      <Container className="animate-fade-down animate-duration-1000 hidden sm:mb-0 md:mb-6 md:block lg:mb-14">
+        <div className={cn("flex", alignClass)}>
+          <button
+            onClick={scrollToBottom}
+            type="button"
+            className={cn(
+              "animate-[bounce_4s_infinite] cursor-pointer",
+              className,
+            )}
+          >
+            <div className="z-20 flex flex-col items-center gap-2">
+              <Typography variant="body2" className="font-semibold text-white">
+                scroll
+              </Typography>
+              <LuMouse className="h-10 w-10 text-white" />
+              <LuChevronDown className="h-6 w-10 text-white" />
+            </div>
+          </button>
+        </div>
+      </Container>
+    </div>
+  );
+};
+
+const Hero: React.FC<HeroProps> & HeroComposition = Object.assign(
+  ({ children, className, ...props }: HeroProps) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const heroBannerRef = useRef<HTMLDivElement>(null);
+
+    return (
+      <HeroContext.Provider value={{ isLoaded, setIsLoaded, heroBannerRef }}>
+        <section
+          id="hero-banner"
+          ref={heroBannerRef}
+          className={cn("relative grid w-full", className)}
+          {...props}
+        >
+          {children}
+        </section>
+      </HeroContext.Provider>
+    );
+  },
+  {
+    Background,
+    Content,
+    Title,
+    SubTitle,
+    ScrollIcon,
+  },
+);
+
+export { Hero, Background, Content, Title, SubTitle, ScrollIcon };

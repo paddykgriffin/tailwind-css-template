@@ -16,7 +16,7 @@ const typograhyVariants = cva("", {
       body2: "text-sm leading-6",
     },
     textColor: {
-      default: "text-foreground",
+      default: "text-black",
       muted: "text-muted",
       primary: "text-primary",
       secondary: "text-secondary",

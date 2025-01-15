@@ -8,13 +8,22 @@ export default function Logo() {
     <Link href="/">
       {currentTheme === "dark" ? (
         <Image
-          src="images/LogoDark.svg"
+          src="/images/logo.png"
           height={80}
           width={300}
           alt="Logo Dark"
+          priority
+          style={{ width: "100%", height: "auto" }}
         />
       ) : (
-        <Image src="images/Logo.svg" height={80} width={300} alt="Logo" />
+        <Image
+          src="/images/logo.png"
+          height={80}
+          width={300}
+          alt="Logo"
+          priority
+          style={{ width: "100%", height: "auto" }}
+        />
       )}
     </Link>
   );

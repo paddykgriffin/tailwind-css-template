@@ -1,18 +1,28 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { footerMenuLinks } from "./MenuLinks";
 import { cn } from "@/lib/utils";
+import { Url } from "next/dist/shared/lib/router/router";
 
-const FooterNav = () => {
+export type MenuDataType = {
+  label: string;
+  href: Url;
+};
+
+type FooterLinkProps = {
+  data: MenuDataType[];
+};
+
+const FooterNav = ({ data }: FooterLinkProps) => {
   return (
     <ul className="rtl:space-x-reserve mt-4 flex flex-col font-medium">
-      {footerMenuLinks.map((item) => (
+      {data.map((item) => (
         <li key={item.label}>
           <Link
             href={item.href}
             className={cn(
-              `flex items-center rounded py-1 text-white hover:text-gray-300`,
+              `flex items-center rounded py-1 font-normal text-gray-400 hover:text-gray-300 text-sm`,
             )}
           >
             {item.label}
