@@ -17,6 +17,7 @@ import {
   ScrollIconProps,
 } from "./hero.interfaces";
 import { LuChevronDown, LuMouse } from "react-icons/lu";
+import Image from "next/image";
 
 const HeroContext = React.createContext<HeroContextType | undefined>(undefined);
 
@@ -79,12 +80,19 @@ const Background = ({
         />
       )}{" "}
       {type === "img" ? (
-        <img
+        <Image
           alt={imageAlt}
           src={src}
           ref={mediaRef as React.RefObject<HTMLImageElement>}
-          className={mediaClass}
-        />
+          layout="fill"
+          objectFit="cover"
+          className={mediaClass} />
+        // <img
+        //   alt={imageAlt}
+        //   src={src}
+        //   ref={mediaRef as React.RefObject<HTMLImageElement>}
+        //   className={mediaClass}
+        // />
       ) : null}
       {!hideTransparentLayer && (
         <div
@@ -161,7 +169,7 @@ const ScrollIcon = ({ className, align = "right" }: ScrollIconProps) => {
       alignClass = "justify-end";
       break;
     default:
-      alignClass: "justify-end";
+      alignClass = "justify-end";
   }
 
   return (
