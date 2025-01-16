@@ -1,4 +1,3 @@
-import Metadata from "next";
 import React from "react";
 import {
   Hero,
@@ -7,17 +6,15 @@ import {
   Title,
   SubTitle,
   ScrollIcon,
-} from "@/components/common/Hero/Hero"; // Importing separately
+} from "@/components/common/Hero/Hero";
 
 import About from "@/components/custom/About/About";
 import Contact from "@/components/custom/Contact/Contact";
 import LatestWork from "@/components/custom/LatestWork/Work";
 import What from "@/components/custom/WhatWeDo/What";
 
-// Here we define the metadata for the page
-export const metadata: typeof Metadata = {
+export const metadata = {
   title: "Home Page",
-  description: "Homepage SEO content...",
 };
 
 export default function HomePage() {
