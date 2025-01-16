@@ -35,6 +35,7 @@ export interface HeroProps extends HTMLProps<"section"> {
 const Background = ({
   type,
   src,
+  subPageHeight,
   imageAlt = "Hero Banner",
   hideSkeleton = false,
   hideTransparentLayer = false,
@@ -67,6 +68,7 @@ const Background = ({
     {
       "opacity-0": !isLoaded,
       "opacity-100": isLoaded,
+      "xl:h-[14vh]": subPageHeight === true,
     },
   );
 
@@ -85,9 +87,10 @@ const Background = ({
           src={src}
           ref={mediaRef as React.RefObject<HTMLImageElement>}
           className={mediaClass}
+          priority
           width={992}
           height={100}
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "100%" }}
         />
       ) : // <img
       //   alt={imageAlt}
@@ -123,11 +126,7 @@ const Content = ({ children, className }: ContentProps) => {
 };
 
 const Title = ({ children, className, ...props }: TypographyProps) => (
-  <Typography
-    variant="h1"
-    {...props}
-    className={cn("text-4xl font-bold", className)}
-  >
+  <Typography variant="h1" {...props} className={cn("text-4xl", className)}>
     {children}
   </Typography>
 );

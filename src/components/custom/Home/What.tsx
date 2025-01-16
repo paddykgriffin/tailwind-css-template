@@ -1,7 +1,7 @@
 import { Section } from "@/components/layouts/Section/Section";
 import { Typography } from "@/components/common/Typography/Typography";
 import { Button } from "@/components/common/Button/Button";
-import { WhatWeData } from "./data";
+import { WhatWeData } from "@/components/custom/Home/data/data-what";
 import Image from "next/image";
 import React from "react";
 import { Container } from "@/components/layouts/Container/Container";

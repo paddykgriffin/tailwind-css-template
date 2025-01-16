@@ -2,7 +2,7 @@ import { Section } from "@/components/layouts/Section/Section";
 import { Typography } from "@/components/common/Typography/Typography";
 import { Button } from "@/components/common/Button/Button";
 import { Container } from "@/components/layouts/Container/Container";
-import { ProjectsData } from "./data";
+import { ProjectsData } from "@/components/custom/Home/data/data-work";
 import Image from "next/image";
 import React from "react";
 
@@ -21,12 +21,12 @@ export default function LatestWork() {
         className="pb-6 text-3xl leading-[3rem] text-gray-500 dark:text-white"
       >
         We created{" "}
-        <span className="dark:text-secondary font-semibold text-primary">
+        <span className="font-semibold text-primary dark:text-secondary">
           unique
         </span>{" "}
         experiences for some of our clients have a look around at some of our
         latest completed{" "}
-        <span className="dark:text-secondary font-semibold text-primary">
+        <span className="font-semibold text-primary dark:text-secondary">
           websites.
         </span>
       </Typography>

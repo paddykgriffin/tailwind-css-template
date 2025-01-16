@@ -1,7 +1,10 @@
 import { Section } from "@/components/layouts/Section/Section";
 import { Typography } from "@/components/common/Typography/Typography";
 import MapComponent from "../Map";
-import { OfficeData, JobsData } from "./data";
+import {
+  OfficeData,
+  JobsData,
+} from "@/components/custom/Home/data/data-contact";
 import { cn } from "@/lib/utils";
 import React from "react";
 

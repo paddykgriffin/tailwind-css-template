@@ -26,6 +26,7 @@ interface BackgroundProps {
   imageAlt?: string;
   hideTransparentLayer?: boolean;
   hideSkeleton?: boolean;
+  subPageHeight?: boolean;
 }
 
 interface ScrollIconProps {
