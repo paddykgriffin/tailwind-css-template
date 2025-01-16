@@ -84,16 +84,18 @@ const Background = ({
           alt={imageAlt}
           src={src}
           ref={mediaRef as React.RefObject<HTMLImageElement>}
-          layout="fill"
-          objectFit="cover"
-          className={mediaClass} />
-        // <img
-        //   alt={imageAlt}
-        //   src={src}
-        //   ref={mediaRef as React.RefObject<HTMLImageElement>}
-        //   className={mediaClass}
-        // />
-      ) : null}
+          className={mediaClass}
+          width={992}
+          height={100}
+          style={{ width: "100%", height: "auto" }}
+        />
+      ) : // <img
+      //   alt={imageAlt}
+      //   src={src}
+      //   ref={mediaRef as React.RefObject<HTMLImageElement>}
+      //   className={mediaClass}
+      // />
+      null}
       {!hideTransparentLayer && (
         <div
           className={cn(

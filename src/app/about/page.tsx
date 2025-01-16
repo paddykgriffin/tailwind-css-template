@@ -1,11 +1,6 @@
 import { Section } from "@/components/layouts/Section/Section";
-import Metadata from "next";
-import React from "react";
 
-export const metadata: typeof Metadata = {
-  title: "About Page",
-  description: "Homepage SEO content...",
-};
+import React from "react";
 
 export default function AboutPage() {
   return (
