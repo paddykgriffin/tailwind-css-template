@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
 import { PanelData } from "@/components/custom/About/data";
-import { it } from "node:test";
+
 export const metadata = {
   title: "About Us",
   description: "We are a team of talented developers and designers.",
