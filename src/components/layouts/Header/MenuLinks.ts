@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export type NavItem = {label: string, href: string};
 
 export const primaryMenuLinks: Array<NavItem> = [
