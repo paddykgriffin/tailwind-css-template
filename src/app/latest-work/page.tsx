@@ -16,7 +16,7 @@ export default function LatestWorkPage() {
         <Background
           type="img"
           src="/images/subpageheader.png"
-          subPageHeight
+          subPageHero
           hideTransparentLayer
         />
       </Hero>

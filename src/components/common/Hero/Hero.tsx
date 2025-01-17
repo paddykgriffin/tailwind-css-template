@@ -35,7 +35,7 @@ export interface HeroProps extends HTMLProps<"section"> {
 const Background = ({
   type,
   src,
-  subPageHeight,
+  subPageHero,
   imageAlt = "Hero Banner",
   hideSkeleton = false,
   hideTransparentLayer = false,
@@ -68,7 +68,7 @@ const Background = ({
     {
       "opacity-0": !isLoaded,
       "opacity-100": isLoaded,
-      "xl:h-[14vh]": subPageHeight === true,
+      "xl:h-[14vh]": subPageHero === true,
     },
   );
 

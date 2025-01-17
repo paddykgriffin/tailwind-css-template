@@ -18,7 +18,7 @@ export default function WhatWeDoPage() {
         <Background
           type="img"
           src="/images/subpageheader.png"
-          subPageHeight
+          subPageHero
           hideTransparentLayer
         />
       </Hero>

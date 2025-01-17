@@ -17,7 +17,7 @@ export default function AboutPage() {
         <Background
           type="img"
           src="/images/subpageheader.png"
-          subPageHeight
+          subPageHero
           hideTransparentLayer
         />
       </Hero>

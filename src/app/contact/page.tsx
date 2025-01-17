@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <Hero>
-        <Background type="img" src="/images/subpageheader.png" subPageHeight />
+        <Background type="img" src="/images/subpageheader.png" subPageHero />
       </Hero>
       <Section>
         <Typography
