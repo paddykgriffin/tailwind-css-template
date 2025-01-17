@@ -5,11 +5,7 @@ import { primaryMenuLinks } from "./MenuLinks";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
-interface PrimaryNavProps {
-  href: string;
-}
-
-const PrimaryNav: React.FC<PrimaryNavProps> = ({ href }) => {
+const PrimaryNav = () => {
   const pathname = usePathname();
   const isActive = (itemHref: string) => pathname === itemHref;
 
