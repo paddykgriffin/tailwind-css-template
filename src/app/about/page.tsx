@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  Background,
-  Hero,
-  Content,
-  Title,
-} from "@/components/common/Hero/Hero";
+import { Background, Hero } from "@/components/common/Hero/Hero";
 import { Section } from "@/components/layouts/Section/Section";
 import { Typography } from "@/components/common/Typography/Typography";
 import Image from "next/image";
 import Link from "next/link";
-import { FaA, FaAngleRight } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 export const metadata = {
   title: "About Us",
   description: "We are a team of talented developers and designers.",
@@ -69,7 +64,7 @@ export default function AboutPage() {
             />
             <div className="bg-black/80 p-4 dark:bg-white/20">
               <Typography variant="h4" className="text-white">
-                What We've Done
+                What We&lsquo;ve Done
               </Typography>
               <Link
                 href="/what-weve-done"

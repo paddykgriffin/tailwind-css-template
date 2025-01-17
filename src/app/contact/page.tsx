@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Background,
-  Hero,
-  Content,
-  Title,
-} from "@/components/common/Hero/Hero";
+import { Background, Hero } from "@/components/common/Hero/Hero";
 import { Section } from "@/components/layouts/Section/Section";
 import { Typography } from "@/components/common/Typography/Typography";
 import MapComponent from "@/components/custom/Map";
