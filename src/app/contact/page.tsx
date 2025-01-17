@@ -46,7 +46,7 @@ export default function ContactPage() {
               <div className="form-group mb-6">
                 <label
                   htmlFor="exampleInputEmail1"
-                  className="block pb-2 tracking-normal text-gray-500"
+                  className="block pb-2 tracking-normal text-gray-500 dark:text-white"
                 >
                   Name:
                 </label>
@@ -60,9 +60,9 @@ export default function ContactPage() {
               <div className="form-group mb-6">
                 <label
                   htmlFor="exampleInputEmail1"
-                  className="block pb-2 tracking-normal text-gray-500"
+                  className="block pb-2 tracking-normal text-gray-500 dark:text-white"
                 >
-                  Email address:
+                  Email:
                 </label>
                 <input
                   type="email"
@@ -74,7 +74,7 @@ export default function ContactPage() {
               <div className="form-group mb-6">
                 <label
                   htmlFor="exampleInputEmail1"
-                  className="block pb-2 tracking-normal text-gray-500"
+                  className="block pb-2 tracking-normal text-gray-500 dark:text-white"
                 >
                   Phone Number:
                 </label>
@@ -88,7 +88,7 @@ export default function ContactPage() {
               <div className="form-group mb-12">
                 <label
                   htmlFor="exampleInputEmail1"
-                  className="block pb-2 tracking-normal text-gray-500"
+                  className="block pb-2 tracking-normal text-gray-500 dark:text-white"
                 >
                   Comment:
                 </label>

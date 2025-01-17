@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
@@ -9,8 +9,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 53.349217, // Latitude of the center of the map (San Francisco)
-  lng: -6.244341, // Longitude of the center of the map
+  lat: 53.35430243152764, // Latitude of the center of the map (San Francisco)
+  lng: -6.335699037137711, // Longitude of the center of the map
 };
 
 const MapComponent = () => {
@@ -18,7 +18,7 @@ const MapComponent = () => {
 
   const onLoad = useCallback(function callback(map: google.maps.Map) {
     map.setCenter(center);
-    map.setZoom(14);
+    map.setZoom(12);
     setMap(map);
   }, []);
 
@@ -27,16 +27,16 @@ const MapComponent = () => {
       map &&
       window.google &&
       window.google.maps &&
-      window.google.maps.marker
+      window.google.maps.Marker
     ) {
-      const marker = new google.maps.marker.AdvancedMarkerElement({
+      const marker = new google.maps.Marker({
         position: center,
         map: map,
         title: "This is a custom marker!",
       });
 
       return () => {
-        marker.map = null; // Clean up the marker on unmount
+        marker.setMap(null); // Clean up the marker on unmount
       };
     }
   }, [map]);
@@ -50,7 +50,7 @@ const MapComponent = () => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={14}
+        zoom={12}
         onLoad={onLoad}
       >
         {/* The AdvancedMarkerElement is now being added in useEffect */}
