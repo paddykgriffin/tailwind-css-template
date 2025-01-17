@@ -32,7 +32,7 @@ export default function LatestWork() {
       </Typography>
 
       <Container>
-        <div className="grid grid-cols-4 gap-6 pb-12">
+        <div className="grid gap-6 pb-12 md:grid-cols-4">
           {ProjectsData.map((item, i) => (
             <div key={i}>
               <Image

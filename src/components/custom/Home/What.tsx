@@ -34,7 +34,7 @@ export default function What() {
       </Typography>
 
       <Container className="py-8">
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid gap-16 md:grid-cols-3 md:gap-6">
           {WhatWeData.map((item, i) => (
             <div key={i} className="text-center">
               <div className="relative mx-auto mb-8 grid h-[160px] w-[160px] justify-center rounded-[50%] bg-primary text-center">

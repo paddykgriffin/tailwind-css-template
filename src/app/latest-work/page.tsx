@@ -16,8 +16,8 @@ export default function LatestWorkPage() {
         <Background
           type="img"
           src="/images/subpageheader.png"
+          srcMobile="/images/hero-subpage-mobile.png"
           subPageHero
-          hideTransparentLayer
         />
       </Hero>
       <Section>
@@ -28,7 +28,7 @@ export default function LatestWorkPage() {
           {metadata.title}
         </Typography>
 
-        <div className="grid grid-cols-2 gap-6 py-12">
+        <div className="grid grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
           {ProjectsData.map((item, i) => (
             <div key={i}>
               <Image

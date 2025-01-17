@@ -15,7 +15,12 @@ export default function ContactPage() {
   return (
     <>
       <Hero>
-        <Background type="img" src="/images/subpageheader.png" subPageHero />
+        <Background
+          type="img"
+          src="/images/subpageheader.png"
+          srcMobile="/images/hero-subpage-mobile.png"
+          subPageHero
+        />
       </Hero>
       <Section>
         <Typography
@@ -35,7 +40,7 @@ export default function ContactPage() {
           a few clicks away.
         </Typography>
 
-        <div className="grid grid-cols-2 gap-6 pt-16">
+        <div className="grid grid-cols-1 gap-6 pt-16 lg:grid-cols-2">
           <div className="block px-4 xl:px-8">
             <div className="mb-12 rounded-md bg-yellow-500 p-2 text-gray-700">
               This form is not functional. It is for demonstration purposes
@@ -52,7 +57,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-8/12 rounded-sm border border-gray-300 bg-gray-100 px-2 py-2"
+                  className="w-full rounded-sm border border-gray-300 bg-gray-100 px-2 py-2 md:w-8/12"
                   id="name"
                   placeholder="Enter name"
                 />
@@ -66,7 +71,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="email"
-                  className="w-8/12 rounded-sm border border-gray-300 bg-gray-100 px-2 py-2"
+                  className="w-full rounded-sm border border-gray-300 bg-gray-100 px-2 py-2 md:w-8/12"
                   id="email"
                   placeholder="Enter email"
                 />
@@ -80,7 +85,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="phone"
-                  className="w-8/12 rounded-sm border border-gray-300 bg-gray-100 px-2 py-2"
+                  className="w-full rounded-sm border border-gray-300 bg-gray-100 px-2 py-2 md:w-8/12"
                   id="phone"
                   placeholder="Enter phone number"
                 />
@@ -93,17 +98,17 @@ export default function ContactPage() {
                   Comment:
                 </label>
                 <textarea
-                  className="w-8/12 rounded-sm border border-gray-300 bg-gray-100 px-2 py-2"
+                  className="w-full rounded-sm border border-gray-300 bg-gray-100 px-2 py-2 md:w-8/12"
                   rows={10}
                 ></textarea>
               </div>
-              <Button type="submit" className="rounded-lg" size="large">
+              <Button type="submit" className="w-full md:w-[250px] rounded-lg" size="large">
                 Send Form
               </Button>
             </form>
           </div>
           <div className="block">
-            <div className="pb-12">
+            <div className="pb-6 pt-12 md:pb-12">
               <Typography variant={"h2"} className="text-primary">
                 Our Office
               </Typography>
@@ -112,7 +117,7 @@ export default function ContactPage() {
                 <br />
                 Outside City, Berlin, Germany
               </Typography>
-              <ul className="font-lg pb-4 text-black">
+              <ul className="font-lg pb-4 text-black dark:text-white">
                 <li className="font-lg">
                   <span className="pr-2 font-semibold">Tel:</span>01 456 4568
                 </li>
@@ -120,7 +125,7 @@ export default function ContactPage() {
                   <span className="pr-2 font-semibold">Fax:</span>01 456 4568
                 </li>
               </ul>
-              <ul className="font-lg pb-4 text-black">
+              <ul className="font-lg pb-4 text-black dark:text-white">
                 <li>
                   <span className="pr-2 font-semibold">Sales:</span>
                   <Link href="mailto:sales@easyweb.com">

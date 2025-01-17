@@ -18,6 +18,7 @@ import {
 } from "./hero.interfaces";
 import { LuChevronDown, LuMouse } from "react-icons/lu";
 import Image from "next/image";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const HeroContext = React.createContext<HeroContextType | undefined>(undefined);
 
@@ -35,6 +36,7 @@ export interface HeroProps extends HTMLProps<"section"> {
 const Background = ({
   type,
   src,
+  srcMobile,
   subPageHero,
   imageAlt = "Hero Banner",
   hideSkeleton = false,
@@ -64,13 +66,15 @@ const Background = ({
   }, [type, setIsLoaded]);
 
   const mediaClass = cn(
-    "col-start-1 row-start-1 h-auto xl:h-[90vh] w-full transition-opacity duration-500",
+    "col-start-1 row-start-1 h-auto lg:h-[80vh] xl:h-[90vh] w-full transition-opacity duration-500",
     {
       "opacity-0": !isLoaded,
       "opacity-100": isLoaded,
-      "xl:h-[14vh]": subPageHero === true,
+      "lg:h-[14vh] xl:h-[14vh]": subPageHero === true,
     },
   );
+
+  const { width } = useWindowSize();
 
   return (
     <>
@@ -82,16 +86,29 @@ const Background = ({
         />
       )}{" "}
       {type === "img" ? (
-        <Image
-          alt={imageAlt}
-          src={src}
-          ref={mediaRef as React.RefObject<HTMLImageElement>}
-          className={mediaClass}
-          priority
-          width={992}
-          height={100}
-          style={{ width: "100%" }}
-        />
+        width && width <= 640 ? (
+          <Image
+            alt={imageAlt}
+            src={srcMobile}
+            ref={mediaRef as React.RefObject<HTMLImageElement>}
+            className={mediaClass}
+            priority
+            width={600}
+            height={100}
+            style={{ width: "100%" }}
+          />
+        ) : (
+          <Image
+            alt={imageAlt}
+            src={src}
+            ref={mediaRef as React.RefObject<HTMLImageElement>}
+            className={mediaClass}
+            priority
+            width={992}
+            height={100}
+            style={{ width: "100%" }}
+          />
+        )
       ) : null}
       {!hideTransparentLayer && (
         <div
@@ -169,7 +186,7 @@ const ScrollIcon = ({ className, align = "right" }: ScrollIconProps) => {
 
   return (
     <div className="col-start-1 row-start-1 flex items-end">
-      <Container className="hidden animate-fade-down animate-duration-1000 sm:mb-0 md:mb-6 md:block lg:mb-14">
+      <Container className="animate-fade-down animate-duration-1000 sm:mb-0 md:mb-6 md:block lg:mb-14">
         <div className={cn("flex", alignClass)}>
           <button
             onClick={scrollToBottom}

@@ -18,6 +18,10 @@ import Link from "next/link";
 export default function SidebarNav() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsSheetOpen(false);
+  };
+
   return (
     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
       <SheetTrigger asChild>
@@ -25,7 +29,9 @@ export default function SidebarNav() {
           variant={"icon"}
           size={"icon"}
           disableElevation
-          className={cn("size-7 transition-all")}
+          className={cn(
+            "size-7 text-white transition-all hover:text-white dark:text-white",
+          )}
         >
           <LuMenu className="h-8 w-8" />
         </Button>
@@ -36,26 +42,29 @@ export default function SidebarNav() {
           <SheetDescription>use links to navigate</SheetDescription>
         </SheetHeader>
         <div className="mt-14">
-          <div className="flex items-center justify-between border-t px-6 py-3">
+          <div className="flex items-center justify-between border-t border-gray-300 px-6 py-3">
             <Button
               variant={"icon"}
               size={"icon"}
               disableElevation
-              className={cn("size-7 transition-all")}
+              className={cn("size-7 text-black transition-all dark:text-white")}
             >
-              <LuHouse className="h-12 w-12" />
+              <Link href="/#" onClick={handleLinkClick}>
+                <LuHouse className="h-8 w-8" />
+              </Link>
             </Button>
             <ModeToggle />
           </div>
           <nav>
             <ul>
               {primaryMenuLinks.map((item) => (
-                <li key={item.label} className={cn("border-b")}>
+                <li key={item.label} className={cn("border-b border-gray-300")}>
                   <div className="flex items-center">
                     <Link
+                      onClick={handleLinkClick}
                       href={item.href}
                       className={cn(
-                        `flex-grow px-6 py-4 font-bold transition-colors hover:bg-gray-100 aria-[current=page]:text-primary dark:hover:bg-gray-700`,
+                        `flex-grow px-6 py-4 font-bold text-black transition-colors hover:bg-gray-100 aria-[current=page]:text-primary dark:text-white dark:hover:bg-gray-700`,
                       )}
                     >
                       {item.label}

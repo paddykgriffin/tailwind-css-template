@@ -32,18 +32,18 @@ export default function Header() {
           className="flex flex-wrap items-center justify-between gap-2 p-8"
           maxWidth="4xl"
         >
-          <div className="max-h-12">
+          <div className="max-h-16 md:max-h-12">
             <Logo />
           </div>
 
           {mainNav && (
-            <div className="flex w-full items-center md:w-auto">
+            <div className="hidden w-full items-center md:w-auto xl:flex">
               <PrimaryNav />
               <ModeToggle />
             </div>
           )}
 
-          <div className="block xl:hidden">
+          <div className="block pt-2 xl:hidden">
             <SidebarNav />
           </div>
         </Container>

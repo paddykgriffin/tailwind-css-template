@@ -5,6 +5,8 @@ import { Typography } from "@/components/common/Typography/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
+import { PanelData } from "@/components/custom/About/data";
+import { it } from "node:test";
 export const metadata = {
   title: "About Us",
   description: "We are a team of talented developers and designers.",
@@ -17,22 +19,22 @@ export default function AboutPage() {
         <Background
           type="img"
           src="/images/subpageheader.png"
+          srcMobile="/images/hero-subpage-mobile.png"
           subPageHero
-          hideTransparentLayer
         />
       </Hero>
 
       <Section>
-        <div className="grid items-center gap-4 border-b border-gray-300 pb-12">
+        <div className="flex flex-col gap-4 border-b border-gray-300 pb-12 lg:grid lg:items-center">
           <Typography
             variant="h1"
-            className="text-center text-black dark:text-white"
+            className="pb-6 text-center text-black sm:text-left md:pb-0 dark:text-white"
           >
             {metadata.title}
           </Typography>
           <Typography
             variant={"body1"}
-            className="col-start-1 col-end-3 leading-[2.5rem] dark:text-white"
+            className="col-start-1 col-end-3 text-center leading-[2.5rem] md:text-left dark:text-white"
           >
             Amet ad tempor fugiat amet dolor id enim sint ut occaecat cillum
             sint commodo deserunt. Sunt cupidatat duis ut ex esse incididunt
@@ -53,70 +55,33 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="mt-12 grid grid-cols-3 gap-12 lg:px-24">
-          <div className="panel shadow-lg drop-shadow-xl">
-            <Image
-              className=""
-              src="/images/img_cta_whatwedone.jpg"
-              alt="sample image"
-              width={500}
-              height={100}
-            />
-            <div className="bg-black/80 p-4 dark:bg-white/20">
-              <Typography variant="h4" className="text-white">
-                What We&lsquo;ve Done
-              </Typography>
-              <Link
-                href="/what-weve-done"
-                className="block text-white transition-all duration-500 hover:translate-x-5"
-              >
-                Check out our past work
-                <FaAngleRight className="inline-block" />
-              </Link>
+        <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-3 xl:px-24">
+          {PanelData.map((item, i) => (
+            <div className="panel shadow-lg drop-shadow-xl" key={i}>
+              <Image
+                className=""
+                src={item.image}
+                alt="sample image"
+                width={500}
+                height={100}
+              />
+              <div className="bg-black/80 p-4 dark:bg-white/20">
+                <Typography
+                  variant="h4"
+                  className="pb-2 text-2xl text-white md:text-xl"
+                >
+                  {item.title}
+                </Typography>
+                <Link
+                  href={item.linkHref}
+                  className="block text-lg text-white transition-all duration-500 hover:translate-x-5 md:text-base"
+                >
+                  {item.linkLabel}
+                  <FaAngleRight className="inline-block" />
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="panel shadow-lg drop-shadow-xl">
-            <Image
-              className=""
-              src="/images/img_cta_contact.jpg"
-              alt="sample image"
-              width={500}
-              height={100}
-            />
-            <div className="bg-black/80 p-4 dark:bg-white/20">
-              <Typography variant="h4" className="text-white">
-                Contact Us
-              </Typography>
-              <Link
-                href="/what-weve-done"
-                className="block text-white transition-all duration-500 hover:translate-x-5"
-              >
-                Call Us Today for a quote
-                <FaAngleRight className="inline-block" />
-              </Link>
-            </div>
-          </div>
-          <div className="panel shadow-lg drop-shadow-xl">
-            <Image
-              className=""
-              src="/images/img_cta_vacancies.jpg"
-              alt="sample image"
-              width={500}
-              height={100}
-            />
-            <div className="bg-black/80 p-4 dark:bg-white/20">
-              <Typography variant="h4" className="text-white">
-                Vacancies
-              </Typography>
-              <Link
-                href="/what-weve-done"
-                className="block text-white transition-all duration-500 hover:translate-x-5"
-              >
-                See what jobs are available
-                <FaAngleRight className="inline-block" />
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </Section>
     </>

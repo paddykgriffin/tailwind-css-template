@@ -24,7 +24,7 @@ export default function Contact() {
         Contact US
       </Typography>
 
-      <div className="grid grid-cols-2 gap-6 pt-16">
+      <div className="grid gap-6 md:pt-16 md:grid-cols-2">
         <div className="col-start-1 row-start-1 flex flex-col items-center">
           <div className="py-6">
             {OfficeData.map((item, i) => (

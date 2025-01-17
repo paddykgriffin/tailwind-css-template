@@ -11,19 +11,17 @@ export default function Logo() {
         <Image
           src="/images/logo.png"
           height={80}
-          width={300}
+          width={275}
           alt="Logo Dark"
           priority
-          style={{ width: "100%", height: "auto" }}
         />
       ) : (
         <Image
           src="/images/logo.png"
           height={80}
-          width={300}
+          width={275}
           alt="Logo"
           priority
-          style={{ width: "100%", height: "auto" }}
         />
       )}
     </Link>

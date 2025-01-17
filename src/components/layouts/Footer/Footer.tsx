@@ -35,25 +35,22 @@ export default function Footer() {
           </div>
         </div> */}
 
-        <div className="mt-6 grid items-center gap-4">
-          <div className="col-start-1 col-end-9 flex">
+        <div className="grid items-center gap-4 md:mt-6">
+          <div className="flex flex-col justify-center pb-6 md:col-start-1 md:flex-row md:justify-start md:pb-0 md:first:col-end-9">
             <Typography
               variant="body1"
-              align={"left"}
-              className="mb-0 text-xs text-gray-300"
+              className="mb-0 pb-4 text-center text-lg text-gray-300 md:pb-0 md:text-left md:text-sm"
             >
               &copy; Company Name {year}
             </Typography>
-            <div className="div ml-6">
-              <ul className="flex gap-6 text-xs">
-                <li>
-                  t:{" "}
+            <div className="text-center md:ml-6 md:text-left">
+              <ul className="flex flex-col justify-center text-lg md:flex-row md:justify-start md:gap-6 md:text-sm">
+                <li className="py-4 md:py-0">
                   <a href="tel:011235690" className="hover:text-white">
                     01 123 5690
                   </a>
                 </li>
-                <li>
-                  e:{" "}
+                <li className="py-4 md:py-0">
                   <a
                     href="mailto:info@companyname.com"
                     className="hover:text-white"
@@ -64,7 +61,8 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="col-start-9 col-end-12 flex justify-end">
+
+          <div className="flex justify-center md:col-start-9 md:col-end-12 md:justify-end">
             <ul className="flex flex-row gap-4">
               <li>
                 <a href="">

@@ -23,6 +23,7 @@ interface ContentProps {
 interface BackgroundProps {
   type: "img";
   src: string;
+  srcMobile?: string;
   imageAlt?: string;
   hideTransparentLayer?: boolean;
   hideSkeleton?: boolean;

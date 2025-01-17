@@ -23,9 +23,13 @@ export default function HomePage() {
   return (
     <>
       <Hero>
-        <Background type="img" src="/images/hero.png" />
+        <Background
+          type="img"
+          src="/images/hero.png"
+          srcMobile="/images/hero-mobile.png"
+        />
         <Content className="items-center text-center">
-          <Title className="m-5 uppercase text-white">
+          <Title className="leading-18 m-5 uppercase text-white">
             Are you a growing company?
           </Title>
           <SubTitle className="m-5 text-white">

@@ -2,7 +2,7 @@ import React from "react";
 import { Background, Hero } from "@/components/common/Hero/Hero";
 import { Section } from "@/components/layouts/Section/Section";
 import { Typography } from "@/components/common/Typography/Typography";
-import { ServicesData } from "@/components/custom/WhatWeDo/data/data-services";
+import { ServicesData } from "@/components/custom/WhatWeDo/data-services";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -18,8 +18,8 @@ export default function WhatWeDoPage() {
         <Background
           type="img"
           src="/images/subpageheader.png"
+          srcMobile="/images/hero-subpage-mobile.png"
           subPageHero
-          hideTransparentLayer
         />
       </Hero>
       <Section className="pb-0">
@@ -45,12 +45,12 @@ export default function WhatWeDoPage() {
               className="border-b border-gray-300 py-12 last:border-0"
             >
               <div
-                className={cn("grid auto-cols-auto grid-flow-col items-center")}
+                className={cn("grid md:auto-cols-auto md:grid-flow-col items-center")}
               >
                 <div
                   className={cn(
                     "",
-                    item.alignClass === true ? "order-2" : "order-1",
+                    item.alignClass === true ? "md:order-2" : "md:order-1",
                   )}
                 >
                   <Typography
@@ -74,8 +74,8 @@ export default function WhatWeDoPage() {
                   className={cn(
                     "",
                     item.alignClass === true
-                      ? "order-1 pr-[60px]"
-                      : "order-2 flex justify-end pl-[60px]",
+                      ? "md:order-1 md:pr-[60px]"
+                      : "md:order-2 flex justify-end md:pl-[60px]",
                   )}
                 >
                   <Image

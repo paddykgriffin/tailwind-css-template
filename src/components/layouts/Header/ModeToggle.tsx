@@ -13,10 +13,16 @@ export function ModeToggle() {
   }
 
   return (
-    <Button onClick={toogleTheme} variant="icon" size="icon" disableElevation className="text-white ml-3">
+    <Button
+      onClick={toogleTheme}
+      variant="icon"
+      size="icon"
+      disableElevation
+      className="ml-3 text-black dark:text-white"
+    >
       <Icon
         icon="line-md:moon"
-        className={`size-6 transition-all ${currentTheme === "dark" ? "-rotate-90 scale-0 " : "-rotate-0 scale-100"}`}
+        className={`size-6 transition-all ${currentTheme === "dark" ? "-rotate-90 scale-0" : "-rotate-0 scale-100"}`}
       />
       <Icon
         icon="line-md:sunny-filled-loop"
