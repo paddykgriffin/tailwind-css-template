@@ -16,7 +16,7 @@ export default function About() {
         </Typography>
         <Typography
           variant="body1"
-          className="dark:text-secondary text-3xl text-primary"
+          className="text-3xl text-primary dark:text-secondary"
         >
           We are an innventive company priding ourselves on quaility solutions.
         </Typography>
@@ -40,7 +40,6 @@ export default function About() {
         <Button
           size={"large"}
           href="/about"
-          target="_blank"
           className="rounded-[8px] px-6 uppercase hover:shadow-lg dark:bg-primary"
         >
           Find out more

@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#333366] py-10 dark:bg-[#121212]">
       <Container maxWidth="3xl">
-        <div className="mb-4 grid gap-4">
+        {/* <div className="mb-4 grid gap-4">
           <div className="col-start-1 col-end-4 flex items-center">
             <Logo />
           </div>
@@ -33,9 +33,9 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="mt-6 grid items-center gap-4 border-t-[1px] border-t-[#26264B] pt-12 dark:border-t-white/20">
+        <div className="mt-6 grid items-center gap-4">
           <div className="col-start-1 col-end-9 flex">
             <Typography
               variant="body1"

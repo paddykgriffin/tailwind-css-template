@@ -92,13 +92,7 @@ const Background = ({
           height={100}
           style={{ width: "100%" }}
         />
-      ) : // <img
-      //   alt={imageAlt}
-      //   src={src}
-      //   ref={mediaRef as React.RefObject<HTMLImageElement>}
-      //   className={mediaClass}
-      // />
-      null}
+      ) : null}
       {!hideTransparentLayer && (
         <div
           className={cn(

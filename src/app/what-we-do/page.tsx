@@ -36,7 +36,7 @@ export default function WhatWeDoPage() {
           className="leading-12 text-center text-3xl font-extralight tracking-wide"
         >
           We provide a wide{" "}
-          <span className="text-secondary dark:text-secondary">
+          <span className="font-semibold text-secondary dark:text-secondary">
             range of services,
           </span>{" "}
           see below some of the

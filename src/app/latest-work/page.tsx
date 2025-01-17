@@ -10,7 +10,7 @@ import { Typography } from "@/components/common/Typography/Typography";
 import { ProjectsData } from "@/components/custom/Home/data/data-work";
 import Image from "next/image";
 export const metadata = {
-  title: "Latest Work",
+  title: "Our Latest Work",
   description: "Check out our latest work.",
 };
 
@@ -18,7 +18,12 @@ export default function LatestWorkPage() {
   return (
     <>
       <Hero>
-        <Background type="img" src="/images/subpageheader.png" subPageHeight />
+        <Background
+          type="img"
+          src="/images/subpageheader.png"
+          subPageHeight
+          hideTransparentLayer
+        />
       </Hero>
       <Section>
         <Typography

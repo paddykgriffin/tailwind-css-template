@@ -17,8 +17,8 @@ const MapComponent = () => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
 
   const onLoad = useCallback(function callback(map: google.maps.Map) {
-    const bounds = new google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+    map.setCenter(center);
+    map.setZoom(14);
     setMap(map);
   }, []);
 
