@@ -89,7 +89,7 @@ const Background = ({
         width && width <= 640 ? (
           <Image
             alt={imageAlt}
-            src={srcMobile}
+            src={srcMobile ? srcMobile : null}
             ref={mediaRef as React.RefObject<HTMLImageElement>}
             className={mediaClass}
             priority
