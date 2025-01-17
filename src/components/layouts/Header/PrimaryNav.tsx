@@ -17,9 +17,9 @@ const PrimaryNav = () => {
                 "font-bold text-white": window.location.pathname === item.href,
               },
             )}
-            onClick={() => {
-              window.location.pathname = item.href;
-            }}
+            // onClick={() => {
+            //   window.location.pathname = item.href;
+            // }}
           >
             {item.label}
           </Link>

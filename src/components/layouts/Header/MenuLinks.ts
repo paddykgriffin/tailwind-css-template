@@ -1,4 +1,4 @@
-import { LinkProps } from "next/link";
+import LinkProps from "next/link";
 
 export type NavItem = LinkProps & {label: string};
 
