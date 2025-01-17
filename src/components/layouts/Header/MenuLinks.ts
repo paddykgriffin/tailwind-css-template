@@ -1,6 +1,6 @@
-import LinkProps from "next/link";
+import Link from "next/link";
 
-export type NavItem = typeof LinkProps & {label: string, href: string};
+export type NavItem = {label: string, href: string};
 
 export const primaryMenuLinks: Array<NavItem> = [
     {
