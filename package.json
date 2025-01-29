@@ -1,5 +1,6 @@
 {
-  "name": "tailwind-css-example",
+  "name": "easycompany",
+  "description": "Portfolio website for Easy Company built with Next.js and Tailwind CSS",
   "version": "0.1.0",
   "private": true,
   "scripts": {
