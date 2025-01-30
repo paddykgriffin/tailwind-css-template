@@ -64,7 +64,7 @@ export default function SidebarNav() {
                       onClick={handleLinkClick}
                       href={item.href}
                       className={cn(
-                        `flex-grow px-6 py-4 font-bold text-black transition-colors hover:bg-gray-100 aria-[current=page]:text-primary dark:text-white dark:hover:bg-gray-700`,
+                        `grow px-6 py-4 font-bold text-black transition-colors hover:bg-gray-100 aria-[current=page]:text-primary dark:text-white dark:hover:bg-gray-700`,
                       )}
                     >
                       {item.label}
